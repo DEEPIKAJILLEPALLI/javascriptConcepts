@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Digital Clock</title>
+</head>
+<style>
+body{
+    background-image: url(clock1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+</style>
+<body>
+        <h1 id="clock" style="color:white;text-align: center;top:50%;left:43%; position: absolute;"></h1>
+<script>
+    function Digitalclock() {
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        var day = date.getDay();
+        var month = date.getMonth();
+        var year = date.getFullYear();
+        if (minutes < 10) {
+            minutes = '0' + minutes;
+        }
+        else if (hours < 10) {
+            hours = '0' + hours;
+
+        } else if (seconds < 10) {
+            seconds = '0' + seconds;
+
+        }
+var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        var clock= days[day] + ' '+ hours +':'+minutes+':'+seconds;
+        console.log(clock);
+    document.getElementById('clock').innerHTML=clock;
+    }
+    
+    Digitalclock();
+    setInterval(Digitalclock,1000);
+</script>
+
+
+</body>
+
+</html>
