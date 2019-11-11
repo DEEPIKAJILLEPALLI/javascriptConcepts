@@ -151,4 +151,54 @@ if (age > 18) {
    alert("you are child");
 }
 ```
-  
+#### Logical Operators:  
+OR : || *use this symbol instead of 'or' in example  
+
+|Operator| Symbol|Example|
+|--------|-------|-------|
+|OR | or |  `if(age>18 or age < 30){alert('You are in adult stage');}`|
+|AND|`&&`| `if(age>=18 && typeof age  == "number" ){alert('You are in adult stage');}`|
+|NOT |!|`alert( !true )`|
+
+#### Loops  
+* while 
+```js 
+while (condition) {
+  // code
+  // so-called "loop body"
+}
+```
+* do.. while
+```js
+do {
+  // loop body
+} while (condition);
+```
+* for   
+```js
+for (begin; condition; step) {
+  // ... loop body ...
+}
+```
+> To Break the loop use `break;`
+To Continue to the next iteration use `continue`  
+
+#### Switch
+* A switch statement can replace multiple if checks.  
+```js
+switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    [break]
+
+  case 'value2':  // if (x === 'value2')
+    ...
+    [break]
+
+  default:
+    ...
+    [break]
+}
+```
+> Several variants of case which share the same code can be grouped,just dont put break after case and write the code in last case followed by break; which has similar code of previous case.  
+> Case Value is type sensitive .The values must be of the same type to match.
