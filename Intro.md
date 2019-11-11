@@ -112,9 +112,43 @@ alert("There will be an error")[1, 2].forEach(alert)
 |assignment|=|```let x=9 alert(x) //9```|
 |Multiplication| `*` |```alert(2*2) //4```|
 |exponentiation |`**`|```alert(2**3) //8```|
-|Increment| ++ |```let x=2 alert(x++ + " " + ++x) //2 3```|
-|Decrement| -- |```let x=2 alert(x-- + " " + --x) //2 1```|
+|Increment| ++ |```let x=2 alert(x++ + " " + ++x) //2 3``` |
+|Decrement| -- |```let x=2 alert(x-- + " " + --x) //2 1``` |
+|Greater Than| > |```alert(5>3) //true ;alert( '2' > 1 )// true, string '2' becomes a number 2``` |
+|Less Than| < |```alert(5<3) //false``` |
+|Greater Than or equals| >= |```alert(5>=3) //true```|
+|Less Than or equals| <= |```alert(3<=3) //true```|
+| Equals| ==| ```alert(2==1); //false ```|
+| Not Equals| !=| ```alert(2!=1); //true ```|
+| Strict Equals| ===| ```alert( 0 === false ); //false ```|
 
-  
-  
+> The values null and undefined equal == each other and do not equal any other value.  
+
+#### Interaction  
+* alert: `alert(message);`
+* prompt : `result = prompt(title, [default]);`  
+   > Example :  
+   ```js
+   let name = prompt('What's Your Name ?', "christopher");
+   alert(`You name ${name} sounds good.`);
+   ```
+   `The second parameter is optional, but if we don’t supply it, Internet Explorer will insert the text "undefined" into the prompt.`
+* confirm : `result = confirm(question);`
+  > Example :  
+   ```js
+   let question = confirm("you are learning Javascript?");
+   alert(question);
+   ```
+#### Conditional Operators:  
+* Similar to other Programming languages `if.. else` blocks
+> Example  
+```js
+let age = prompt('How old are you?', '');
+
+if (age > 18) {
+  alert("you are adult");
+} else {
+   alert("you are child");
+}
+```
   
