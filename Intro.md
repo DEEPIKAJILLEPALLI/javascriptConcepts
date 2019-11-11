@@ -82,7 +82,39 @@ alert("There will be an error")[1, 2].forEach(alert)
      ```
      > The expression inside ${…} is evaluated and the result becomes a part of the string.This can only be done in backticks,not with single and double quotes
      
-  * we can assign a **null** value to variable,which means an "empty" string or "nothing"or "value unknown".  
-  * **undefined** means value is not assigned.  
+* we can assign a **null** value to variable,which means an "empty" string or "nothing"or "value unknown".  
+* **undefined** means value is not assigned.  
+* String and Numeric Conversion  
+
+| Value       | Becomes   |  
+| ----------- | --------- |  
+| undefined   | NaN       |  
+| null        | 0         |
+|true/false   | 1/0  |
+|string |whitespaces from both sides are ignored. An empty string becomes 0. An error gives NaN |  
+
+* Boolean Conversion  
+
+| Value       | Becomes   |  
+| ----------- | --------- |  
+|0, null, undefined, NaN, ""| false|
+|any other value | true|  
+
+#### Operators  
+| Name|Symbol |Example|
+|-----|------- |------|
+|Unary-|  - | ``` let x=3 x=-x alert(x) // -3 ``` |
+|Unary+| + | ``` let x=3 x=-x alert(x) // -3 ``` |
+|Binary| + | ```alert( +true ); // 1; Converts non-numbers to numbers ```|
+|addition|+|```alert(5+9) //14```|
+|subtraction|-|```alert(15-9) //6```|
+|modulus|%|```alert(9%9) //0```|
+|assignment|=|```let x=9 alert(x) //9```|
+|Multiplication| `*` |```alert(2*2) //4```|
+|exponentiation |`**`|```alert(2**3) //8```|
+|Increment| ++ |```let x=2 alert(x++ + " " + ++x) //2 3```|
+|Decrement| -- |```let x=2 alert(x-- + " " + --x) //2 1```|
+
+  
   
   
