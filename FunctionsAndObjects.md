@@ -101,4 +101,70 @@ alert( user["full Name"] ); //Deepika Ruth Jillepalli ; multi word  should be ac
 alert( user.age ); //24
 delete user.age;
 ```  
-* To Access 
+* **for in loop to iterate through objects**  
+> syntax: 
+```js
+for (key in object) {
+  // executes the body for each key among object properties
+}
+``` 
+> Example
+```js
+let user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
+
+for (let key in user) {
+  // keys
+  alert( key );  // name, age, isAdmin
+  // values for the keys
+  alert( user[key] ); // John, 30, true
+}
+```
+* integer properties are sorted in objects,so to show them how they are add + before integerPropertyname("3" => "+3").
+* **Primitive Types** follow "Copy by reference" `let var1="hey"; let var2=var1; ` 
+  * we have two independent variables, each one is storing the string "Hey!"
+* A **object** variable stores not the object itself, but its "address in memory" `let var1={name:"hey"}; let var2=var1; `
+  * Now we have two variables, each one with the reference to the same object.  
+### Garbage collection  
+* Memory management in JavaScript is performed automatically(reachability).
+* Local variables and parameters of the current function or Variables and parameters for other functions on the current chain of nested calls or Global variables -"roots"
+* "Reachable" values are those that are accessible or usable somehow.  
+* A value is considered as reachable if it’s reachable from a root by a reference or by a chain of references.
+* When a Variable becomes unreachable, **Garbage collector** will junk the data and free the memory.  
+* **Mark and Sweep Algorithm**  
+      1. The garbage collector takes roots and “marks” (remembers) them.  
+      2. Then it visits and “marks” all references from them.  
+      3. Then it visits marked objects and marks their references. All visited objects are remembered, so as not to visit the same      object twice in the future.  
+      4. And so on until every reachable (from the roots) references are visited.  
+      5. All objects except marked ones are removed.  
+> JavaScript engines apply many optimizations to make it run faster and not affect the execution.  
+   
+**Generational collection** – objects are split into two sets: “new ones” and “old ones”. Many objects appear, do their job and die fast, they can be cleaned up aggressively. Those that survive for long enough, become “old” and are examined less often.  
+**Incremental collection** – if there are many objects, and we try to walk and mark the whole object set at once, it may take some time and introduce visible delays in the execution. So the engine tries to split the garbage collection into pieces. Then the pieces are executed one by one, separately. That requires some extra bookkeeping between them to track changes, but we have many tiny delays instead of a big one.  
+**Idle-time collection** – the garbage collector tries to run only while the CPU is idle, to reduce the possible effect on the execution.  
+
+##### Objects can be either of String Type or Symbol Type  
+* A “symbol” represents a unique identifier.`let symbolName = Symbol() or let symbolName = Symbol("descriptionName");`
+* Symbols don’t auto-convert to a string `alert(symbolName.toString()); or alert(symbolName.description)`.
+* Symbols allow us to create “hidden” properties of an object
+* [For More Detailed Explanation of Symbols:click this](https://javascript.info/symbol)
+
+
+* To access the object, a method can use the ***this*** keyword.  
+* "this" is not bound
+```js
+let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    // "this" is the "current object"
+    alert(this.name);
+  }
+
+};
+```
+ 
